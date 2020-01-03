@@ -1,0 +1,36 @@
+{
+    "name": "superbolt/core-php",
+    "type": "library",
+    "description": "PHP package for Superbolt",
+    "keywords": ["superbolt", "core-php"],
+    "homepage": "https://github.com/superbolt/core-php",
+    "license": "",
+    "authors": [
+        {
+            "name": "Superbolt",
+            "email": "package@superbolt.app",
+            "homepage": "https://github.com/superboltapp"
+        }
+    ],
+    "require": {
+        "php": "~7.3",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "~6.5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Superbolt\\Core\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Superbolt\\Core\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
