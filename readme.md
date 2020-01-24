@@ -7,27 +7,11 @@
 [![Quality Score][ico-code-quality]][link-code-quality]
 [![Total Downloads][ico-downloads]][link-downloads]
 
-**Note:** Replace ```Superbolt``` ```superboltapp``` ```https://github.com/superboltapp``` ```package@superbolt.app``` ```superbolt``` ```core-php``` ```PHP package for Superbolt``` with their correct values in [README.md](readme.md), [CHANGELOG.md](changelog.md), [CONTRIBUTING.md](CONTRIBUTING.md), [LICENSE.md](license.md) and [composer.json](composer.json) files, then delete this line. You can run `$ php prefill.php` in the command line to make all replacements at once. Delete the file prefill.php as well.
+Debugging background tasks is already hard enough as it is. Superbolt monitors your scheduled tasks and saves the logs for you.
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what
-PSRs you support to avoid any confusion with users and contributors.
+This package integrates access to the Superbolt API with your PHP application.
 
-## Structure
-
-If any of the following are applicable to your project, then the directory structure should follow industry best practices by being named the following.
-
-```
-bin/        
-build/
-docs/
-config/
-src/
-tests/
-vendor/
-```
-
-
-## Install
+## Installation
 
 Via Composer
 
@@ -38,23 +22,25 @@ $ composer require superbolt/core-php
 ## Usage
 
 ``` php
-$skeleton = new superbolt\core-php();
-echo $skeleton->echoPhrase('Hello, League!');
+$apiClient = new Superbolt\Core\Api('YOUR_SUPERBOLT_API_KEY');
+$cronLogger = new Superbolt\Core\Cron($api);
+
+$startResponse = $cronLogger->sendStartPing('HelloWorldCommand', '* * * * *', 'production');
+$finishResponse = $cronLogger->sendFinishPing($startResponse->getCronToken(), 0);
+$logResponse = $cronLogger->sendLog($finishResponse->getCronToken(), 'Hello World', 0);
 ```
+
+Have a look at [Cron.php](src/Cron.php) to see how each method exactly works. The tests of course also are a great case of how this package can be used.
 
 ## Change log
 
-Please see [CHANGELOG](changelog.md) for more information on what has changed recently.
+Please see the [changelog](changelog.md) for more information on what has changed recently.
 
 ## Testing
 
 ``` bash
-$ composer test
+vendor/bin/phpunit
 ```
-
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) and [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) for details.
 
 ## Security
 
@@ -62,7 +48,7 @@ If you discover any security related issues, please email package@superbolt.app 
 
 ## Credits
 
-- [Superbolt][link-author]
+- [Superbolt team][link-author]
 - [All Contributors][link-contributors]
 
 ## License
