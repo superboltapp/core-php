@@ -13,9 +13,13 @@ final class Api
     /** @var Client */
     private $client;
 
-    public function __construct(string $apiKey, string $endpoint = 'https://superbolt.app/api')
+    public function __construct(string $apiKey, ?string $endpoint = 'https://superbolt.app/api/v1')
     {
         $this->key = $apiKey;
+
+        if (mb_substr($endpoint, -1, 1) !== '/') {
+            $endpoint .= '/';
+        }
 
         $this->setClient(new Client([
             'base_uri' => $endpoint,
