@@ -8,14 +8,14 @@ use GuzzleHttp\ClientInterface;
 final class Api
 {
     /** @var string */
-    private $key;
+    private $secret;
 
     /** @var Client */
     private $client;
 
     public function __construct(string $apiKey, ?string $endpoint = 'https://superbolt.app/api/v1')
     {
-        $this->key = $apiKey;
+        $this->secret = $apiKey;
 
         if (mb_substr($endpoint, -1, 1) !== '/') {
             $endpoint .= '/';
@@ -33,7 +33,7 @@ final class Api
             'headers' => [
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/x-www-form-urlencoded',
-                'X-Token' => $this->key,
+                'Authorization' => "Bearer {$this->secret}",
             ]
         ]);
 
