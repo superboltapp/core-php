@@ -31,6 +31,6 @@ final class SuccessfulResponse
             $data[$key] = $value;
         }
 
-        return json_encode(['data' => $data], JSON_THROW_ON_ERROR, 512);
+        return json_encode(['data' => $data]);
     }
 }

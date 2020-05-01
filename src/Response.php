@@ -2,10 +2,10 @@
 
 namespace Superbolt\Core;
 
-use \Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ResponseInterface;
 
-final class Response {
-
+final class Response
+{
     /** @var array */
     private $data;
 
@@ -15,7 +15,7 @@ final class Response {
     public function __construct(ResponseInterface $guzzleResponse)
     {
         $this->rawResponse = $guzzleResponse;
-        $decoded = json_decode($guzzleResponse->getBody()->getContents(), true, 512, JSON_THROW_ON_ERROR);
+        $decoded = json_decode($guzzleResponse->getBody()->getContents(), true);
         $this->data = $decoded['data'];
     }
 

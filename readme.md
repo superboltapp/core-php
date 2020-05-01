@@ -1,10 +1,7 @@
 # core-php
 
 [![Latest Version on Packagist][ico-version]][link-packagist]
-[![Software License][ico-license]](license.md)
-[![Build Status][ico-travis]][link-travis]
-[![Coverage Status][ico-scrutinizer]][link-scrutinizer]
-[![Quality Score][ico-code-quality]][link-code-quality]
+[![GitHub Workflow Status][ico-actions]][link-actions]
 [![Total Downloads][ico-downloads]][link-downloads]
 
 Debugging background tasks is already hard enough as it is. Superbolt monitors your scheduled tasks and saves the logs for you.
@@ -56,16 +53,11 @@ If you discover any security related issues, please email info@superbolt.app ins
 The MIT License (MIT). Please see [License File](license.md) for more information.
 
 [ico-version]: https://img.shields.io/packagist/v/superbolt/core-php.svg?style=flat-square
-[ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/superbolt/core-php/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/superbolt/core-php.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/superbolt/core-php.svg?style=flat-square
+[ico-actions]: https://img.shields.io/github/workflow/status/superboltapp/core-php/Run%20tests/master?style=flat-square
 [ico-downloads]: https://img.shields.io/packagist/dt/superbolt/core-php.svg?style=flat-square
 
 [link-packagist]: https://packagist.org/packages/superbolt/core-php
-[link-travis]: https://travis-ci.org/superbolt/core-php
-[link-scrutinizer]: https://scrutinizer-ci.com/g/superbolt/core-php/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/superbolt/core-php
+[link-actions]: https://github.com/superboltapp/core-php/actions
 [link-downloads]: https://packagist.org/packages/superbolt/core-php
 [link-author]: https://github.com/superboltapp
 [link-contributors]: ../../contributors

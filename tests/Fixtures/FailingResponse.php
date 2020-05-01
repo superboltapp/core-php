@@ -43,6 +43,6 @@ final class FailingResponse
             $data[$key] = $value;
         }
 
-        return json_encode($data, JSON_THROW_ON_ERROR, 512);
+        return json_encode($data);
     }
 }
