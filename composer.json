@@ -4,7 +4,7 @@
     "description": "PHP package for Superbolt",
     "keywords": ["superbolt", "core-php"],
     "homepage": "https://github.com/superbolt/core-php",
-    "license": "",
+    "license": "MIT",
     "authors": [
         {
             "name": "Superbolt",
